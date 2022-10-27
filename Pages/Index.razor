@@ -1,9 +1,23 @@
 ﻿@page "/"
+@using System.Text
+@inject Services.GeneratorService generatorService;
 
-<PageTitle>Index</PageTitle>
+<PageTitle>WwwToolTemplate</PageTitle>
 
-<h1>Hello, world!</h1>
+<h1 class="text-center mt-2">WwwToolTemplate</h1>
 
-Welcome to your new app.
+<div class="row">
+    <div class="col-6">
+<textarea @bind=InitialData style="width: 100%;" rows="20"></textarea>
+    </div>
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+    <div class="col-6">
+<textarea @bind=ProcessedData style="width: 100%;" rows="20"></textarea>
+    </div>
+</div>
+
+<div class="text-center mt-2">
+    <button @onclick=Process class="btn btn-primary">Process</button>
+</div>
+
+
